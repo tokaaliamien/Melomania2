@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Melomania</string>
+    <string name="search_hint">Search Melomania</string>
+    <item name="visible" type="id"/>
+    <item name="masked" type="id"/>
+
+    <string name="recommended">Recommended for You</string>
+    <string name="most_popular">Most Popular</string>
+    <string name="news_feed">News Feed</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_name">Username</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_password_confirm">Confirm Password</string>
+    <string name="prompt_age">age</string>
+    <string name="prompt_gender">Choose Gender</string>
+    <string name="prompt_birthday">Choose Day of Birth</string>
+
+    <string name="action_sign_in">Or Sign in here!</string>
+    <string name="action_sign_up">Or Sign up here!</string>
+    <string name="action_sign_in_button">Sign In</string>
+    <string name="action_sign_up_button">Sign Up</string>
+    
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string-array name="gender_array">
+        <item>Unknown</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+
+
+
+</resources>

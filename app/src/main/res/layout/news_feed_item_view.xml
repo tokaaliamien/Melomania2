@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@android:color/white">
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/iv_profile_img_news_feed"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/person_placeholder"
+                app:civ_border_color="@color/colorAccent"
+                app:civ_border_width="2dp" />
+
+
+            <!--TODO add action and menu to add list-->
+            <ImageButton
+                android:id="@+id/ib_add_to_list"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_alignLeft="@+id/iv_profile_img_news_feed"
+                android:layout_below="@+id/iv_profile_img_news_feed"
+                android:background="@drawable/ic_playlist_add"
+                android:elevation="2dp" />
+
+            <ImageView
+                android:id="@+id/iv_isLiked"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_below="@+id/iv_profile_img_news_feed"
+                android:layout_toRightOf="@id/ib_add_to_list"
+                android:background="@drawable/ic_favorite_border"
+                android:elevation="2dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_profile_img_news_feed"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp">
+
+                <TextView
+                    android:id="@+id/tv_name_news_feed"
+                    android:text="Bertram Gilfoyle is listining to"
+                    style="@style/text"/>
+
+                <TextView
+                    android:id="@+id/tv_song_name_news_feed"
+                    android:text="Bohemian Rhapsody"
+                    android:textStyle="bold"
+                    style="@style/text"/>
+
+                <TextView
+                    android:id="@+id/tv_singer_name_news_feed"
+                    android:text="by Queen"
+                    style="@style/text" />
+
+
+            </LinearLayout>
+
+            <ImageButton
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/iv_profile_img_news_feed"
+                android:background="@drawable/ic_play_arrow"
+                android:elevation="2dp" />
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
