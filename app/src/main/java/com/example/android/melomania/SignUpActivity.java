@@ -1,22 +1,15 @@
 package com.example.android.melomania;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.view.KeyEvent;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
-import android.widget.AdapterView;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Date;
 
@@ -45,7 +38,7 @@ public class SignUpActivity extends AppCompatActivity {
     //private UserLoginTask mAuthTask = null;
 
     // UI references.
-    private EditText mPasswordView,mEmailView;
+    private EditText mPasswordView, mEmailView;
     private TextView signInTextView;
     private String gender;
     private Spinner genderDropDownList;
@@ -62,7 +55,7 @@ public class SignUpActivity extends AppCompatActivity {
         genderDropDownList = (Spinner) findViewById(R.id.spinner_gender);
 
         mPasswordView = (EditText) findViewById(R.id.password);
-        dataOfBirth=(DatePicker)findViewById(R.id.dp_data_of_birth);
+        dataOfBirth = (DatePicker) findViewById(R.id.dp_data_of_birth);
         dataOfBirth.setMaxDate(new Date().getTime());
 
         signUpButton = (Button) findViewById(R.id.sign_up_button);

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Melomania</string>
     <string name="search_hint">Search Melomania</string>
-    <item name="visible" type="id"/>
-    <item name="masked" type="id"/>
+    <item name="visible" type="id" />
+    <item name="masked" type="id" />
 
     <string name="recommended">Recommended for You</string>
     <string name="most_popular">Most Popular</string>
@@ -22,7 +22,7 @@
     <string name="action_sign_up">Or Sign up here!</string>
     <string name="action_sign_in_button">Sign In</string>
     <string name="action_sign_up_button">Sign Up</string>
-    
+
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
@@ -37,7 +37,13 @@
         <item>Female</item>
     </string-array>
 
-
+    <!--Strings related to profile-->
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="edit">Edit</string>
 
 
 </resources>

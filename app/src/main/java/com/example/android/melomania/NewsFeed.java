@@ -22,8 +22,8 @@ public class NewsFeed {
     }
 
     public NewsFeed() {
-        userName=singerName=songName=action="";
-        isLiked=false;
+        userName = singerName = songName = action = "";
+        isLiked = false;
     }
 
     public int getProfileImg() {

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dirty_white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.android.melomania.ProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/iv_profile_img_profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="20dp"
+            android:elevation="5dp"
+            android:src="@drawable/gilfoile_placeholder_temp"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_width="2dp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/tv_name_profile"
+                style="@style/label_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Bertram Gilfoyle"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_followers_label_profile"
+                style="@style/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name_profile"
+                android:text="@string/followers" />
+
+            <TextView
+                android:id="@+id/tv_followers_profile"
+                style="@style/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name_profile"
+                android:layout_marginLeft="8sp"
+                android:layout_toRightOf="@+id/tv_followers_label_profile"
+                android:text="10" />
+
+            <TextView
+                android:id="@+id/tv_following_label_profile"
+                style="@style/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_followers_profile"
+                android:text="@string/following" />
+
+            <TextView
+                android:id="@+id/tv_following_profile"
+                style="@style/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_followers_profile"
+                android:layout_marginLeft="8sp"
+                android:layout_toRightOf="@+id/tv_following_label_profile"
+                android:text="5" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <!--<View
+        style="@style/line"/> -->
+
+    <TextView
+        android:id="@+id/tv_email_label_profile"
+        style="@style/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_followers_profile"
+        android:layout_marginLeft="8sp"
+        android:layout_toRightOf="@+id/tv_following_profile"
+        android:text="@string/email"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_email_profile"
+        style="@style/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_followers_profile"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8sp"
+        android:layout_toRightOf="@+id/tv_following_profile"
+        android:text="gilfoyle@gmail.com" />
+
+    <!--<View
+        style="@style/line"/>-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:background="@color/colorAccent"
+        android:text="@string/edit" />
+
+</LinearLayout>

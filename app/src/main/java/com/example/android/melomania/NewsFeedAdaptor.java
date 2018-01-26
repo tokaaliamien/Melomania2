@@ -1,6 +1,7 @@
 package com.example.android.melomania;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -19,34 +19,10 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-import static android.R.attr.thumbnail;
-import static com.example.android.melomania.R.id.imageView;
-
-/**
- * Created by Ravi Tamada on 18/05/16.
- */
 public class NewsFeedAdaptor extends RecyclerView.Adapter<NewsFeedAdaptor.MyViewHolder> {
 
     private Context mContext;
     private List<NewsFeed> newsList;
-
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView nameAndAction, songName, singerName;
-        public CircleImageView profileImg;
-        public ImageView isLiked;
-        public ImageButton addToList;
-
-        public MyViewHolder(View view) {
-            super(view);
-            nameAndAction = (TextView) view.findViewById(R.id.tv_name_news_feed);
-            songName = (TextView) view.findViewById(R.id.tv_song_name_news_feed);
-            singerName = (TextView) view.findViewById(R.id.tv_singer_name_news_feed);
-            profileImg = (CircleImageView) view.findViewById(R.id.iv_profile_img_news_feed);
-            isLiked = (ImageView) view.findViewById(R.id.iv_isLiked);
-            addToList = (ImageButton) view.findViewById(R.id.ib_add_to_list);
-        }
-    }
-
 
     public NewsFeedAdaptor(Context mContext, List<NewsFeed> newsList) {
         this.mContext = mContext;
@@ -68,8 +44,13 @@ public class NewsFeedAdaptor extends RecyclerView.Adapter<NewsFeedAdaptor.MyView
         holder.nameAndAction.append(" " + news.getAction());
         holder.nameAndAction.append(" to");
         holder.songName.setText(news.getSongName());
-        holder.singerName.setText("by "+news.getSingerName());
-        //TODO a3ml el isliked
+        holder.singerName.setText("by " + news.getSingerName());
+        //isliked
+        if (news.isLiked()) {
+            holder.isLiked.setImageResource(R.drawable.ic_favorite);
+        } else {
+            holder.isLiked.setImageResource(R.drawable.ic_favorite_border);
+        }
         //ToDO A3ml el img
 
         // loading album cover using Glide library
@@ -80,12 +61,12 @@ public class NewsFeedAdaptor extends RecyclerView.Adapter<NewsFeedAdaptor.MyView
         holder.isLiked.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (news.isLiked()) {
+                if (!news.isLiked()) {
                     holder.isLiked.setImageResource(R.drawable.ic_favorite);
-                    news.setLiked(false);
+                    news.setLiked(true);
                 } else {
                     holder.isLiked.setImageResource(R.drawable.ic_favorite_border);
-                    news.setLiked(true);
+                    news.setLiked(false);
                 }
             }
         });
@@ -97,6 +78,18 @@ public class NewsFeedAdaptor extends RecyclerView.Adapter<NewsFeedAdaptor.MyView
 
             }
         });
+
+        //ٍSet img action
+        holder.profileImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                User user = new User(news.getUserName(), news.getProfileImg());
+                Intent intent = new Intent(mContext, ProfileActivity.class);
+                intent.putExtra("user", user);
+                mContext.startActivity(intent);
+            }
+        });
+
     }
 
     /**
@@ -106,9 +99,31 @@ public class NewsFeedAdaptor extends RecyclerView.Adapter<NewsFeedAdaptor.MyView
         // inflate menu
         PopupMenu popup = new PopupMenu(mContext, view);
         MenuInflater inflater = popup.getMenuInflater();
-        inflater.inflate(R.menu.add_to_list, popup.getMenu());
+        inflater.inflate(R.menu.more_options, popup.getMenu());
         popup.setOnMenuItemClickListener(new MyMenuItemClickListener());
         popup.show();
+    }
+
+    @Override
+    public int getItemCount() {
+        return newsList.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        public TextView nameAndAction, songName, singerName;
+        public CircleImageView profileImg;
+        public ImageView isLiked;
+        public ImageButton addToList;
+
+        public MyViewHolder(View view) {
+            super(view);
+            nameAndAction = (TextView) view.findViewById(R.id.tv_name_news_feed);
+            songName = (TextView) view.findViewById(R.id.tv_song_name_news_feed);
+            singerName = (TextView) view.findViewById(R.id.tv_singer_name_news_feed);
+            profileImg = (CircleImageView) view.findViewById(R.id.iv_profile_img_news_feed);
+            isLiked = (ImageView) view.findViewById(R.id.iv_isLiked);
+            addToList = (ImageButton) view.findViewById(R.id.ib_add_to_list);
+        }
     }
 
     /**
@@ -123,20 +138,9 @@ public class NewsFeedAdaptor extends RecyclerView.Adapter<NewsFeedAdaptor.MyView
         public boolean onMenuItemClick(MenuItem menuItem) {
             //TODO ashel el hbl dh w azbotha
             switch (menuItem.getItemId()) {
-                case R.id.action_add_favourite:
-                    Toast.makeText(mContext, "Add to favourite", Toast.LENGTH_SHORT).show();
-                    return true;
-                case R.id.action_play_next:
-                    Toast.makeText(mContext, "Play next", Toast.LENGTH_SHORT).show();
-                    return true;
-                default:
+
             }
             return false;
         }
-    }
-
-    @Override
-    public int getItemCount() {
-        return newsList.size();
     }
 }

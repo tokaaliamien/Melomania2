@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="4dp">
+    android:layout_marginBottom="2dp">
 
-    <android.support.v7.widget.CardView
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardBackgroundColor="@android:color/white">
+        android:elevation="2dp"
+        app:cardBackgroundColor="@android:color/white"
+        card_view:cardElevation="2dp"
+        card_view:cardUseCompatPadding="true">
 
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -23,7 +26,8 @@
                 android:id="@+id/iv_profile_img_news_feed"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:src="@drawable/person_placeholder"
+                android:elevation="5dp"
+                android:src="@drawable/ic_person_placeholder"
                 app:civ_border_color="@color/colorAccent"
                 app:civ_border_width="2dp" />
 
@@ -35,7 +39,7 @@
                 android:layout_height="42dp"
                 android:layout_alignLeft="@+id/iv_profile_img_news_feed"
                 android:layout_below="@+id/iv_profile_img_news_feed"
-                android:background="@drawable/ic_playlist_add"
+                android:background="@drawable/ic_more"
                 android:elevation="2dp" />
 
             <ImageView
@@ -57,19 +61,25 @@
 
                 <TextView
                     android:id="@+id/tv_name_news_feed"
-                    android:text="Bertram Gilfoyle is listining to"
-                    style="@style/text"/>
+                    style="@style/text"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Bertram Gilfoyle is listining to" />
 
                 <TextView
                     android:id="@+id/tv_song_name_news_feed"
+                    style="@style/text"
+                    android:ellipsize="end"
+                    android:maxLines="1"
                     android:text="Bohemian Rhapsody"
-                    android:textStyle="bold"
-                    style="@style/text"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_singer_name_news_feed"
-                    android:text="by Queen"
-                    style="@style/text" />
+                    style="@style/text"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="by Queen" />
 
 
             </LinearLayout>
