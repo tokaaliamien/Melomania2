@@ -41,6 +41,12 @@
                     android:layout_height="wrap_content"
                     android:text="go to login" />
 
+                <Button
+                    android:id="@+id/favor_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="go to favor" />
+
                 <RelativeLayout
                     android:id="@+id/recommended_layout"
                     android:layout_width="match_parent"

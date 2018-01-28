@@ -86,6 +86,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button goToFavor = (Button) findViewById(R.id.favor_button);
+        goToFavor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FavorArtistsActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
